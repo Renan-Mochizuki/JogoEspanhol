@@ -101,7 +101,7 @@ const Question = (props) => {
         };
     });
 
-    const activeQuesiton = () => {
+    const activateQuesiton = () => {
         props.setIsInView(prevArray => {
             const newArray = [...prevArray];
             newArray.fill(false);
@@ -113,7 +113,7 @@ const Question = (props) => {
     return (
         <>
             <div className='containerQuote' ref={ref}>
-                <a><button onClick={activeQuesiton} className='buttonActivate'>Ativar</button></a>
+                <a><button onClick={activateQuesiton} className='buttonActivate'>Ativar</button></a>
                 <p>{props.leftText} &nbsp;</p>
                 <div className='wordsRoll'>
                     {wordsRollAbove.map((word, index) => (

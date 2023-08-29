@@ -7,25 +7,25 @@ const questions = [
   {
     leftText: 'No',
     rightText: 'dinero para tomar el autobús.',
-    words: ['tenía', 'maçã1', 'laranja2', 'uva3', 'abacaxi4'],
+    words: ['tenía', 'podria', 'sería', 'entendí', 'caminar'],
     answerIndex: 0
   },
   {
-    leftText: '¿',
+    leftText: '¿Tú',
     rightText: 'lo hermoso que estaba el cielo ayer?',
-    words: ['banana0', 'maçã1', 'laranja2', 'Viste', 'abacaxi4'],
+    words: ['escuchó', 'cantó', 'escribio', 'viste', 'aprender'],
     answerIndex: 3
   },
   {
     leftText: '¿A la vuelta podemos',
     rightText: 'al mercado?',
-    words: ['banana0', 'maçã1', 'laranja2', 'uva3', 'ir'],
+    words: ['escuchar', 'reparar', 'diseñar', 'bailó', 'ir'],
     answerIndex: 4
   },
   {
     leftText: 'Casi me olvido de',
     rightText: 'los gatitos',
-    words: ['banana0', 'alimentar', 'laranja2', 'uva3', 'abacaxi4'],
+    words: ['jugar', 'alimentar', 'luchar', 'diseñar', 'explorar'],
     answerIndex: 1
   }
 ];
