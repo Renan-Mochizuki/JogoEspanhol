@@ -10,18 +10,21 @@ const Question = (props) => {
     const answer = props.answer;
 
     const ref = useRef(null);
-    const [isInView, setIsInView] = useState(false);
 
     useEffect(() => {
         const options = {
             root: null,
-            rootMargin: '-80px',
+            rootMargin: '-70px',
             threshold: 1
         };
 
         const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                setIsInView(entry.isIntersecting);
+            entries.forEach((entry, index) => {
+                props.setIsInView(prevArray => {
+                    const newArray = [...prevArray];
+                    newArray[props.keyIndex] = entry.isIntersecting;
+                    return newArray;
+                });
             });
         }, options);
 
@@ -39,28 +42,26 @@ const Question = (props) => {
     }, []);
 
     const [currentWordIndexAbove, setCurrentWordIndexAbove] = useState(0);
-    const [currentWordIndexBelow, setCurrentWordIndexBelow] = useState(4);
+    const [currentWordIndexBelow, setCurrentWordIndexBelow] = useState(3);
     const [inputValue, setInputValue] = useState('');
     const [wordsRollAbove, setWordsRollAbove] = useState([]);
     const [wordsRollBelow, setWordsRollBelow] = useState([]);
 
     useEffect(() => {
-        if (!isCorrect && isInView) {
+        if (!isCorrect && props.isInView) {
             const timer = setInterval(() => {
                 const inputIndex = (currentWordIndexAbove + words.length + 1) % words.length;
 
                 const prevIndexAbove = (currentWordIndexAbove + words.length - 1) % words.length;
-                const prevPrevIndexAbove = (currentWordIndexAbove + words.length - 2) % words.length;
                 setCurrentWordIndexAbove(prevIndexAbove);
 
                 const prevIndexBelow = (currentWordIndexBelow + words.length - 1) % words.length;
-                const prevPrevIndexBelow = (currentWordIndexBelow + words.length - 2) % words.length;
                 setCurrentWordIndexBelow(prevIndexBelow);
 
                 setInputValue(words[inputIndex]);
 
-                const cycledIndexesAbove = [prevPrevIndexAbove, prevIndexAbove, currentWordIndexAbove];
-                const cycledIndexesBelow = [prevPrevIndexBelow, prevIndexBelow, currentWordIndexBelow];
+                const cycledIndexesAbove = [prevIndexAbove, currentWordIndexAbove];
+                const cycledIndexesBelow = [prevIndexBelow, currentWordIndexBelow];
                 setWordsRollAbove(cycledIndexesAbove.map(index => words[index]));
                 setWordsRollBelow(cycledIndexesBelow.map(index => words[index]));
 
@@ -87,7 +88,7 @@ const Question = (props) => {
     }
 
     const handleSpaceBarPress = (event) => {
-        if (event.keyCode === 32 && isInView) {
+        if (event.keyCode === 32 && props.isInView) {
             event.preventDefault();
             checkAnswer();
         }
@@ -100,9 +101,19 @@ const Question = (props) => {
         };
     });
 
+    const activeQuesiton = () => {
+        props.setIsInView(prevArray => {
+            const newArray = [...prevArray];
+            newArray.fill(false);
+            newArray[props.keyIndex] = true;
+            return newArray;
+        });
+    }
+
     return (
         <>
             <div className='containerQuote' ref={ref}>
+                <a><button onClick={activeQuesiton} className='buttonActivate'>Ativar</button></a>
                 <p>{props.leftText} &nbsp;</p>
                 <div className='wordsRoll'>
                     {wordsRollAbove.map((word, index) => (
