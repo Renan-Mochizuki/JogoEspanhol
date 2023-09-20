@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { FaHeart } from 'react-icons/fa';
 import Question from '../components/Question';
 import Win from './Win';
+import Restart from './Restart';
 
 const questions = [
   {
@@ -35,8 +36,12 @@ const Game = () => {
   const [rightQuestions, setRightQuestions] = useState(0);
   const [isInViewArray, setIsInViewArray] = useState([false, false, false, false]);
 
+  // if (lives == 0) {
+  //   window.location.replace('/restart');
+  // }
+
   return (
-    <>
+    <>{lives == 0 ? <Restart rightQuestions={rightQuestions} /> : <>
       {rightQuestions == 4 ?
         <Win />
         :
@@ -52,7 +57,8 @@ const Game = () => {
             />
           ))}
         </>
-      }
+      }</>
+    }
     </>
   );
 };

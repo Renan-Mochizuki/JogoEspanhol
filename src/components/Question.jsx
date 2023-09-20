@@ -88,9 +88,6 @@ const Question = (props) => {
             setIcon(<FontAwesomeIcon icon={faTimesCircle} style={{ color: 'red' }} size='3x' />)
             const livesNumber = props.lives - 1;
             props.setLives(livesNumber);
-            if (livesNumber == 0) {
-                window.location.replace('/restart');
-            }
         }
     }
 
