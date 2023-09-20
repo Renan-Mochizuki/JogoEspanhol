@@ -18,8 +18,8 @@ const questions = [
     answerIndex: 1
   },
   {
-    leftText: '¿Hoy por la mañana, nosotros',
-    rightText: 'al mercado antes de chegar a la escola?',
+    leftText: 'Hoy por la mañana, nosotros',
+    rightText: 'al mercado antes de chegar a la escuela',
     words: ['he ido', 'has ido', 'ha ido', 'hemos ido ', 'han ido'],
     answerIndex: 3
   },
