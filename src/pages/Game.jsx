@@ -5,28 +5,28 @@ import Win from './Win';
 
 const questions = [
   {
-    leftText: 'No',
+    leftText: 'Él no',
     rightText: 'dinero para tomar el autobús.',
-    words: ['tenía', 'podria', 'sería', 'entendí', 'caminar'],
-    answerIndex: 0
+    words: ['he tenido', 'has tenido', 'ha tenido', 'hemos tenido', 'han tenido'],
+    answerIndex: 2
   },
   {
     leftText: '¿Tú',
     rightText: 'lo hermoso que estaba el cielo ayer?',
-    words: ['escuchó', 'cantó', 'escribio', 'viste', 'aprender'],
+    words: ['he visto', 'has visto', 'ha visto', 'hemos visto', 'han visto'],
+    answerIndex: 1
+  },
+  {
+    leftText: '¿Hoy por la mañana, nosotros',
+    rightText: 'al mercado antes de chegar a la escola?',
+    words: ['he ido', 'has ido', 'ha ido', 'hemos ido ', 'han ido'],
     answerIndex: 3
   },
   {
-    leftText: '¿A la vuelta podemos',
-    rightText: 'al mercado?',
-    words: ['escuchar', 'reparar', 'diseñar', 'bailó', 'ir'],
-    answerIndex: 4
-  },
-  {
-    leftText: 'Casi me olvido de',
-    rightText: 'los gatitos',
-    words: ['jugar', 'alimentar', 'luchar', 'diseñar', 'explorar'],
-    answerIndex: 1
+    leftText: 'Yo',
+    rightText: 'los gatitos a la mañana',
+    words: ['he alimentado', 'has alimentado', 'ha alimentado', 'hemos alimentado', 'han alimentado'],
+    answerIndex: 0
   }
 ];
 

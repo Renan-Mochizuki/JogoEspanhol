@@ -1,7 +1,7 @@
 const Win = () => {
     return (
         <>
-            <p>¡Felicidades, has acertado todas!</p>
+            <p className="textAll">¡Felicidades, has acertado todas!</p>
             <a href="/" className='buttonRestart'>Salir</a>
         </>
     )

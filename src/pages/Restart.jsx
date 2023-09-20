@@ -5,7 +5,7 @@ const Restart = () => {
         <>
             <div className='titleRestart'>
                 <h1>Has perdido.</h1>
-                <RiEmotionSadFill size={40} color="white" />
+                <RiEmotionSadFill size={40} color="black" />
             </div>
             <div>
                 <a href="/game" className='buttonRestart'>Jugar de nuevo</a>

@@ -12,30 +12,40 @@
   width: 10rem;
   text-align: center;
   font-size: 1.5rem;
+  background-color: #FF74DC;
+  border: #f03ac2 2px solid;
+  color: #000;
+  border-radius: 5px;
 }
 .buttonQuestion{
   padding-left: 3rem;
   padding-right: 3rem;
   padding-top: 1rem;
   padding-bottom: 1rem; 
+  background-color: #FF74DC;
+  border: none;
+  border-radius: 15px;
+  color: #000;
 }
 .titleRestart{
   display: flex;
   align-items: center;
   justify-content: center;
   column-gap: 10px;
+  color: #000;
 }
 .wordsRoll p{
   font-size: 1rem;
-  color: rgb(181, 181, 181);
+  color: #fc5b5b;
 }
 .buttonRestart{
   text-decoration: none;
   display: block;
-  background-color: greenyellow;
+  background-color: #ff74dc;
   width: auto;
   margin: 5px;
   border-radius: 20px;
+  color: #000;
 }
 #livesContainer{
   position: fixed;
@@ -52,4 +62,46 @@
   padding-right: 2rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem; 
+  background-color: #FF74DC;
+  color: #000;
+  border: #FF74DC;
+  border-radius: 15px;
+}
+
+.buttonActivate:hover{
+  background-color: #FF6B82;
+}
+
+.start {
+  display: inline-block; /* Torna a div um elemento em linha para se ajustar ao conteúdo */
+  padding: 10px 20px; /* Adicione preenchimento para dar a aparência de um botão */
+  background-color: #FF74DC; /* Cor de fundo do botão */
+  color: #000000; /* Cor do texto dentro do botão */
+  text-align: center; /* Centraliza o texto horizontalmente */
+  text-decoration: none; /* Remove sublinhado padrão do link */
+  border-radius: 5px; /* Borda arredondada para dar uma aparência de botão */
+  transition: background-color 0.3s ease; /* Adiciona uma transição suave na cor de fundo */
+  width: 90px;
+}
+
+.start:hover{
+  background-color: #FF6B82; /* Cor de fundo mais escura quando o mouse passa por cima */
+}
+
+.linkStart {
+  color: #292929; /* Cor do texto do link */
+  text-decoration: none; /* Remove sublinhado do link */
+}
+
+.linkStart:active {
+  color: #000000; /* Cor do texto do link quando clicado */
+}
+
+.textAll {
+  font-family: 'Roboto', sans-serif; /* Use o nome da fonte que você incluiu */
+  font-size: 1em; /* Tamanho da fonte */
+  font-weight: bold; /* Peso da fonte (negrito) */
+  color: #000; /* Cor preta */
+  border-radius: 50px; /* Bordas arredondadas para criar uma sensação de "redondo" */
+  padding: 10px 20px; /* Espaçamento interno para que o texto pareça "redondo" */
 }

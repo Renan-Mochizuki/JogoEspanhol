@@ -1,8 +1,8 @@
 const Start = () => {
     return (
-        <>
-            <a href="/game">Jugar</a>
-        </>
+        <div className="start">
+            <a className="linkStart" href="/game">Jugar</a>
+        </div>
     )
 }
 

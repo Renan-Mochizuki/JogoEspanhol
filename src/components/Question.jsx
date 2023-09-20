@@ -72,7 +72,7 @@ const Question = (props) => {
                 setWordsRollAbove(cycledIndexesAbove.map(index => words[index]));
                 setWordsRollBelow(cycledIndexesBelow.map(index => words[index]));
 
-            }, 600);
+            }, 1000);
             return () => clearInterval(timer);
         }
     });
@@ -121,7 +121,7 @@ const Question = (props) => {
         <>
             <div className='containerQuote' ref={ref}>
                 <button onClick={activateQuesiton} className='buttonActivate'>Ativar</button>
-                <p>{props.leftText} &nbsp;</p>
+                <p className='textAll'>{props.leftText} &nbsp;</p>
                 <div className='wordsRoll'>
                     {wordsRollAbove.map((word, index) => (
                         <p key={index}>{word}</p>
@@ -131,11 +131,11 @@ const Question = (props) => {
                         <p key={index}>{word}</p>
                     ))}
                 </div>
-                <p>&nbsp; {props.rightText}</p>
+                <p className='textAll'>&nbsp; {props.rightText}</p>
                 <p className='iconCorrect'>{icon}</p>
             </div>
-            <p>Pressione a barra de espaço para escolher a palavra correta</p>
-            <p>Ou clique no botão:</p>
+            <p className='textAll'>Pressione a barra de espaço para escolher a palavra correta</p>
+            <p className='textAll'>Ou clique no botão:</p>
             <button onClick={checkAnswer} className='buttonQuestion'>Escolher</button>
         </>
     )
